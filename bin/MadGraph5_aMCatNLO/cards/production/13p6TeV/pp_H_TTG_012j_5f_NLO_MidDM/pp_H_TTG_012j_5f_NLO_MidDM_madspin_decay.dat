@@ -1,3 +1,5 @@
+import model DipoleMomentMid_UFO ../models/DipoleMomentMid_UFO/param_card.dat
+
 set ms_dir ./madspingrid
 
 #initialization parameters
@@ -6,6 +8,11 @@ set max_weight_ps_point 400 # number of PS to estimate the maximum for each even
 
 set max_running_process 1
 
-decay h > ta+ ta- a
+set spinmode=none
+
+define l+=ta+
+define l-=ta-
+
+decay h > l+ l- a
 
 launch
